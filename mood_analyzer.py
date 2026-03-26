@@ -1,4 +1,5 @@
 # mood_analyzer.py
+import emoji
 """
 Rule based mood analyzer for short text snippets.
 
@@ -77,13 +78,32 @@ class MoodAnalyzer:
         """
         # TODO: Implement this method.
         #   1. Call self.preprocess(text) to get tokens.
+        tokens = self.preprocess(text)
         #   2. Loop over the tokens.
+        score = 0
+        for token in tokens:
+          if token == "not":
+            if token in self.positive_words:
+              score -= 1
+            elif token in self.negative_words:
+              if len(emoji.emoji_list(token)) > 0:
+                score += 2
+              score += 1
+          elif token in self.positive_words:
+            score += 1
+          elif token in self.negative_words:
+            score -= 1
+            
+          # emj_token = False
+          # if emj_token == len(emoji.emoji_list(token)) > 0
+          
+        
         #   3. Increase the score for positive words, decrease for negative words.
         #   4. Return the total score.
         #
         # Hint: if you implement negation, you may want to look at pairs of tokens,
         # like ("not", "happy") or ("never", "fun").
-        pass
+        return score
 
     # ---------------------------------------------------------------------
     # Label prediction

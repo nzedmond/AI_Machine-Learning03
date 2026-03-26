@@ -50,6 +50,14 @@ SAMPLE_POSTS = [
     "This is fine",
     "So excited for the weekend",
     "I am not happy about this",
+    "This class is 🔥",
+    "I rock with AI generated code",
+    "I had the saddest day ever",
+    "I laughed so hard that I started to 😭",
+    "😂",
+    "This class is 🍰",
+    "😐",
+    ""
 ]
 
 # Human labels for each post above.
@@ -65,6 +73,13 @@ TRUE_LABELS = [
     "neutral",   # "This is fine"
     "positive",  # "So excited for the weekend"
     "negative",  # "I am not happy about this"
+    "positive",  # "This class is 🔥"
+    "negative",  # "I had the saddest day ever"
+    "positive",  # "I rock with AI generated code"
+    "mixed",  # I laughed so hard that I started to 😭"
+    "positive",  # This class is 🍰
+    "positive",  # "😂"
+    "neutral",  # "😂"
 ]
 
 # TODO: Add 5-10 more posts and labels.
